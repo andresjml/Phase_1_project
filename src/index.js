@@ -27,7 +27,7 @@ function clearContent2(){
 ///////////////////////
 //Get main categories//
 ///////////////////////
-fetch(`http://swapi.dev/api/`)
+fetch(`https://swapi.dev/api/`)
     .then(resp=>resp.json())
     .then(json =>displayMainCateg(json))
 
