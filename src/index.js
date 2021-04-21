@@ -69,7 +69,7 @@ function displayObjc(json){
             li.innerHTML=element.name
             li.addEventListener('click',function(){
                 let elementUrl=`${element.url}`
-                elementUrl = elementUrl.replace(/^http:\/\//i, 'https://');
+                elementUrl = elementUrl.replace("http:", 'https:');
                 fetchElementInfo(elementUrl)
             })
         }
