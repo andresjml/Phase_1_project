@@ -70,6 +70,7 @@ function displayObjc(json){
             li.addEventListener('click',function(){
                 let elementUrl=`${element.url}`
                 elementUrl = elementUrl.replace("http:", 'https:');
+                console.log(elementUrl)
                 fetchElementInfo(elementUrl)
             })
         }
@@ -77,6 +78,7 @@ function displayObjc(json){
             li.innerHTML=element.title
             li.addEventListener('click',function(){
                 let elementUrl=`${element.url}`
+                elementUrl = elementUrl.replace("http:", 'https:');
                 fetchElementInfo(elementUrl)
             })
         }
@@ -94,6 +96,7 @@ function displayObjc(json){
     next.addEventListener('click',function(){
         if(json.next!==null){
             let nextOrBackUrl=`${json.next}`
+            nextOrBackUrl = nextOrBackUrl.replace("http:", 'https:');
             nextBackFunc(nextOrBackUrl)
             //console.log('next')
         }
@@ -102,6 +105,7 @@ function displayObjc(json){
     back.addEventListener('click',function(){
         if(json.previous!==null){
             let nextOrBackUrl=`${json.previous}`
+            nextOrBackUrl = nextOrBackUrl.replace("http:", 'https:');
             nextBackFunc(nextOrBackUrl)
             //console.log('back')
         }
