@@ -56,3 +56,15 @@ div#display_element p{
     font-weight: bold;
 }
 
+div#form{
+    background-color: black;
+    opacity: 75%;
+    padding: 15px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div#form div#comments{
+    text-transform:capitalize;
+}

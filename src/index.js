@@ -39,8 +39,9 @@ function displayMainCateg(json){
             div.innerHTML=element
             div.id=`${element}`
             
-            div.addEventListener('click', function(){               
-                fetchCategory(element);
+            div.addEventListener('click', function(){   
+                let fetchMainUrl=`https://swapi.dev/api/${element}/`            
+                fetchCategory(fetchMainUrl);
             })            
             sec.appendChild(div)
     });
@@ -49,8 +50,8 @@ function displayMainCateg(json){
 ///////////////////////////////////////////
 //fetch each category once is clicked ^^^//
 //////////////////////////////////////////
-function fetchCategory(category){
-    fetch (`https://swapi.dev/api/${category}/`)
+function fetchCategory(Url){
+    fetch (Url)
         .then(resp=>resp.json())
         .then(json =>displayObjc(json))
 }
@@ -85,7 +86,7 @@ function displayObjc(json){
         ul.appendChild(li)
     })
     display.appendChild(ul)
-    
+    //buttons
     let next = document.createElement('button')
     next.innerHTML='Next'
     let back = document.createElement('button')
@@ -226,3 +227,19 @@ function displayElementInfo(json){
     
 }
 
+////////////////
+//Comment Form//
+////////////////
+
+let form = document.getElementById('inputForm')
+
+form.addEventListener('submit',function(e){
+    e.preventDefault()
+
+    let commentDiv =  document.getElementById('comments')
+    let input=e.target[0].value
+    let pComment=document.createElement('p')
+    pComment.innerHTML=input
+    commentDiv.appendChild(pComment)
+    e.target[0].value=""
+})
